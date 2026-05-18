@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import MockupUI from "./MockUp";
 
-// إعدادات حركات الأنيميشن الفاخرة لختام الصفحة
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -31,13 +30,12 @@ const contentVariants = {
   },
 };
 
-const mockupVariants = {
-  hidden: { opacity: 0, scale: 0.9, rotate: 0, y: 100 },
+const imageContainerVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: 30 },
   show: {
     opacity: 1,
     scale: 1,
-    rotate: -10,
-    y: 80, // للحفاظ على تأثير الخروج الجمالي لأسفل الكارت
+    y: 0,
     transition: { duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
   },
 };
@@ -61,7 +59,7 @@ export default function FinalCTA() {
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-[#0C1324] via-[#111827] to-[#070816]"
+          className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-r from-[#111827] via-[#0C1324] to-[#070816]"
         >
           {/* subtle glow */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.08),transparent_35%)] pointer-events-none" />
@@ -95,20 +93,24 @@ export default function FinalCTA() {
               </div>
             </motion.div>
 
-            {/* Mockup */}
-            <div className="relative flex justify-center lg:justify-end h-[240px] sm:h-[260px] overflow-hidden">
-              {/* glow */}
-              <div className="absolute top-1/2 left-1/2 h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/20 blur-[90px] pointer-events-none" />
+            {/* Real Image Section - Full Display (No Cuts) */}
+            <div className="relative flex justify-center lg:justify-end h-[320px] sm:h-[380px] items-center">
+              {/* background glow behind image */}
+              <div className="absolute top-1/2 left-1/2 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-gold/10 blur-[90px] pointer-events-none" />
 
-              <motion.div variants={mockupVariants} className="relative">
-                <div className="relative w-[190px] sm:w-[220px] aspect-[9/19] rounded-[36px] sm:rounded-[40px] border-[6px] sm:border-[7px] border-[#0F172A] bg-black p-1.5 sm:p-2 shadow-[0_20px_60px_rgba(0,0,0,0.7)]">
-                  {/* notch */}
-                  <div className="absolute top-2.5 sm:top-3 left-1/2 z-30 h-4 sm:h-5 w-20 sm:w-24 -translate-x-1/2 rounded-full bg-black" />
-
-                  {/* screen */}
-                  <div className="h-full w-full overflow-hidden rounded-[28px] sm:rounded-[30px] border border-white/5 bg-[#07111B]">
-                    <MockupUI />
-                  </div>
+              <motion.div
+                variants={imageContainerVariants}
+                className="relative w-full max-w-[380px] sm:max-w-[460px]"
+              >
+                <div className="relative w-full">
+                  <Image
+                    src="/cta4.png"
+                    alt="معاينة حية للموقع"
+                    width={460}
+                    height={340}
+                    className="w-full h-auto object-contain"
+                    priority
+                  />
                 </div>
               </motion.div>
             </div>

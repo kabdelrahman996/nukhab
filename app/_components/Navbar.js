@@ -12,7 +12,7 @@ export default function Navbar() {
     { name: "الرئيسية", href: "#" },
     { name: "خدماتنا ", href: "#features" },
     { name: "التكامل والربط", href: "#integrations" },
-    { name: "آراء عملائنا", href: "#testimonials" },
+    { name: "كيف نعمل", href: "#process" },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function Navbar() {
           {/* 3. زر الحجز السريع أو اتصل بنا في اليسار ليحل محل الـ Actions القديمة */}
           <div className="hidden md:flex items-center">
             <Link
-              href="#contact"
+              href="#cta"
               className="px-5 py-2.5 rounded-lg bg-brand-navy border border-brand-gold/30 text-brand-gold text-sm font-bold transition-all duration-300 hover:bg-brand-gold hover:text-brand-dark hover:shadow-[0_0_15px_rgba(204,164,59,0.2)]"
             >
               استشارة مجانية

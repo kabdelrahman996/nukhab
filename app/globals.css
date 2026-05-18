@@ -6,5 +6,9 @@
   --color-brand-gold-glow: rgba(204, 164, 59, 0.15);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 }

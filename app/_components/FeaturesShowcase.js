@@ -69,7 +69,7 @@ export default function FeaturesShowcase() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* HEADING (With Animation) */}
         <motion.div
-          initial="hidden"
+          initial="show"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}

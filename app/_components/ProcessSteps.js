@@ -120,7 +120,7 @@ export default function ProcessSteps() {
               >
                 {/* Content Side */}
                 <motion.div
-                  initial="hidden"
+                  initial="show"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
                   variants={textVariant}

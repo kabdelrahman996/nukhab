@@ -83,12 +83,19 @@ const staggerContainer = {
 };
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
+  hidden: {
+    opacity: 0,
+    y: 40,
+    scale: 0.97,
+  },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
@@ -108,7 +115,7 @@ export default function IntegrationsGrid() {
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial="hidden"
+          initial="show"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}

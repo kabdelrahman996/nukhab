@@ -6,12 +6,19 @@ import MockupUI from "./MockUp";
 
 // إعدادات حركات الأنيميشن الفاخرة لختام الصفحة
 const containerVariants = {
-  hidden: { opacity: 0, y: 40, filter: "blur(6px)" },
+  hidden: {
+    opacity: 0,
+    y: 40,
+    scale: 0.98,
+  },
   show: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 

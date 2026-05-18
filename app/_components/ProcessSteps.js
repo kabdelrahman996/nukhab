@@ -45,12 +45,19 @@ const steps = [
 
 // إعدادات حركات الأنيميشن عند التمرير
 const textVariant = {
-  hidden: { opacity: 0, x: 40, filter: "blur(5px)" },
+  hidden: {
+    opacity: 0,
+    x: 40,
+  },
+
   show: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
@@ -59,14 +66,18 @@ const visualVariant = (reversed) => ({
     opacity: 0,
     x: reversed ? 50 : -50,
     scale: 0.95,
-    filter: "blur(5px)",
   },
+
   show: {
     opacity: 1,
     x: 0,
     scale: 1,
-    filter: "blur(0px)",
-    transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 },
+
+    transition: {
+      duration: 1,
+      ease: [0.16, 1, 0.3, 1],
+      delay: 0.1,
+    },
   },
 });
 
